@@ -360,3 +360,8 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.01em; }
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.55), inset 0 2px 1px -1px #fff, inset 0 -2px 1px -1px rgba(255,255,255,.6), 0 14px 38px rgba(18,48,42,.14);
   backdrop-filter: blur(6px) saturate(170%); -webkit-backdrop-filter: blur(6px) saturate(170%);
 }
+
+/* ===== v5: correccions Liquid Glass (comprovat al navegador) ===== */
+.nav { position: fixed !important; } /* abans quedava 'relative' i empenyia la portada */
+.nav::before, .nav.solid::before { background: var(--glass-bg), rgba(10,30,26,.22); }
+.nav.solid::before { background: var(--glass-bg), rgba(10,30,26,.42); }
