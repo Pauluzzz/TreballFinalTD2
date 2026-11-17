@@ -392,3 +392,7 @@ html, body { overflow-x: clip; }
 .chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; }
 .chips span { padding: .45rem 1.1rem; border-radius: 999px; background: rgba(31,77,58,.1); color: var(--forest); font-weight: 600; font-size: .9rem; border: 1px solid rgba(31,77,58,.18); }
 @media (max-width: 800px) { .split-rev { grid-template-columns: 1fr; } .split-rev img { max-height: 340px; } }
+
+.sub-h { margin: 1.4rem 0 .4rem; font-size: 1.1rem; color: var(--forest); }
+.who-links { margin-top: 1.2rem; font-size: .95rem; color: var(--muted); }
+#qui-som { background: #ece8dc; }
