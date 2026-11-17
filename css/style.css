@@ -380,3 +380,7 @@ html, body { overflow-x: clip; }
   .hero .container { width: 90%; }
   .statbar { margin-top: -40px; }
 }
+
+/* Número del dia dins la targeta: visible sobre fons clar */
+.day-card.photo .num { color: rgba(31,77,58,.16); text-shadow: none; top: 150px; right: 16px; font-size: 3.4rem; }
+.day-card.photo.available .num { color: rgba(31,77,58,.22); }

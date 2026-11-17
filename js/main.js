@@ -93,4 +93,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => place(links.find((l) => l.classList.contains("active"))));
   }
+
+  // Tanca el menú mòbil en tocar un enllaç o fora del menú
+  if (burger && menu) {
+    const closeMenu = () => { menu.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); };
+    menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+    document.addEventListener("click", (e) => { if (!e.target.closest(".nav")) closeMenu(); });
+  }
 });
