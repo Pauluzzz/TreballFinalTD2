@@ -396,3 +396,26 @@ html, body { overflow-x: clip; }
 .sub-h { margin: 1.4rem 0 .4rem; font-size: 1.1rem; color: var(--forest); }
 .who-links { margin-top: 1.2rem; font-size: .95rem; color: var(--muted); }
 #qui-som { background: #ece8dc; }
+
+/* ===== Pàgina de tots els dies ===== */
+.day-tabs-wrap { position: sticky; top: 84px; z-index: 40; padding: 10px 0; pointer-events: none; }
+.day-tabs { display: flex; gap: .4rem; overflow-x: auto; pointer-events: auto; width: fit-content; max-width: 100%; margin-inline: auto; padding: .35rem; border-radius: 999px; scrollbar-width: none; background: rgba(255,255,255,.72); -webkit-backdrop-filter: blur(14px) saturate(160%); backdrop-filter: blur(14px) saturate(160%); box-shadow: 0 8px 26px rgba(18,48,42,.16), inset 0 0 0 1px rgba(255,255,255,.7); }
+.day-tabs::-webkit-scrollbar { display: none; }
+.day-tabs a { white-space: nowrap; text-decoration: none; color: var(--forest-dark); font-weight: 600; font-size: .92rem; padding: .5rem 1.15rem; border-radius: 999px; transition: background .3s, color .3s; }
+.day-tabs a:hover { background: rgba(31,77,58,.1); }
+.day-tabs a.active { background: var(--forest); color: #fff; }
+.day-tabs-wrap + .day-sec { padding-top: 40px; }
+.day-sec { scroll-margin-top: 150px; }
+.day-head { display: flex; gap: 1.4rem; align-items: flex-start; margin-bottom: 2rem; }
+.day-num { font-family: var(--serif); font-size: clamp(4rem, 10vw, 7rem); line-height: .85; color: rgba(31,77,58,.18); font-weight: 600; }
+.date-chip { display: inline-block; font-size: .82rem; font-weight: 700; color: var(--lake); letter-spacing: .08em; text-transform: uppercase; margin-bottom: .5rem; }
+.day-head h2 { margin-bottom: .3em; }
+.soon-box { display: grid; grid-template-columns: 1fr 1.2fr; gap: 1.6rem; align-items: center; background: linear-gradient(145deg, rgba(255,255,255,.7), rgba(255,255,255,.35)); border: 1px solid rgba(255,255,255,.7); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.soon-box img { width: 100%; height: 100%; min-height: 200px; max-height: 260px; object-fit: cover; display: block; filter: grayscale(.35); }
+.soon-box div { padding: 1.4rem 1.6rem 1.4rem 0; }
+@media (max-width: 700px) {
+  .day-head { flex-direction: column; gap: .4rem; }
+  .soon-box { grid-template-columns: 1fr; }
+  .soon-box div { padding: 0 1.3rem 1.3rem; }
+  .day-tabs-wrap { top: 76px; }
+}

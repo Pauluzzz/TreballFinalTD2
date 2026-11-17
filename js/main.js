@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const map = links
       .map((a) => ({ a, el: document.getElementById((a.getAttribute("href").split("#")[1] || (a.getAttribute("href") === "index.html" ? "inici" : "")))}))
       .filter((m) => m.el);
-    if (map.length && location.pathname.indexOf("dia") === -1) {
+    if (map.length && document.body.dataset.page === "index") {
       const update = () => {
         const mark = window.innerHeight * 0.4;
         let cur = map[0];
@@ -99,5 +99,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeMenu = () => { menu.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); };
     menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
     document.addEventListener("click", (e) => { if (!e.target.closest(".nav")) closeMenu(); });
+  }
+
+  // Selector de dies: marca el dia que estàs veient
+  const tabs = [...document.querySelectorAll(".day-tabs a")];
+  if (tabs.length) {
+    const secs = tabs.map((a) => document.getElementById(a.getAttribute("href").slice(1)));
+    const upd = () => {
+      const mark = window.innerHeight * 0.4;
+      let cur = 0;
+      secs.forEach((el, i) => { if (el && el.getBoundingClientRect().top <= mark) cur = i; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = secs.length - 1;
+      tabs.forEach((a, i) => a.classList.toggle("active", i === cur));
+      const act = tabs[cur];
+      if (act && act.parentElement.scrollWidth > act.parentElement.clientWidth) act.parentElement.scrollTo({ left: act.offsetLeft - 20, behavior: "smooth" });
+    };
+    window.addEventListener("scroll", upd, { passive: true });
+    window.addEventListener("resize", upd);
+    upd();
   }
 });
