@@ -268,3 +268,16 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.01em; }
 .nav.solid { background: rgba(10, 30, 26, .85); }
 .btn-ghost, .hero-badges span, .date-pill { background: rgba(255,255,255,.14); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 .gallery figcaption { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(0,0,0,.30); }
+
+/* ===== Desplegable inclou / no inclou ===== */
+.acc { margin-top: 1rem; border-top: 1px solid var(--line); padding-top: .8rem; }
+.acc summary { cursor: pointer; font-weight: 700; color: var(--forest); list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.acc summary::-webkit-details-marker { display: none; }
+.acc summary::after { content: "＋"; font-size: 1.2rem; transition: transform .25s ease; }
+.acc[open] summary::after { content: "−"; }
+.acc-body { padding-top: .8rem; animation: fade .3s ease; }
+.acc-body h4 { margin: .8rem 0 .3rem; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.nocheck { list-style: none; padding: 0; margin: 0; }
+.nocheck li { padding-left: 1.8rem; position: relative; margin-bottom: .5rem; }
+.nocheck li::before { content: "✗"; position: absolute; left: 0; color: #b5533c; font-weight: 800; }
+.acc-note { font-size: .85rem; color: var(--muted); margin-top: .9rem; }
