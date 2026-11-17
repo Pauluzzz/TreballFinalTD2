@@ -263,11 +263,20 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.01em; }
 .credits { font-size: .78rem; color: #8ea89c; margin-top: 1rem; line-height: 1.7; }
 .credits a { color: #b8d1c6; }
 
-/* ===== Blur (vidre esmerilat) ===== */
-.nav { background: rgba(10, 30, 26, .45); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); }
-.nav.solid { background: rgba(10, 30, 26, .85); }
-.btn-ghost, .hero-badges span, .date-pill { background: rgba(255,255,255,.14); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-.gallery figcaption { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(0,0,0,.30); }
+/* ===== Vidre esmerilat (blur) amb alternativa per a navegadors sense suport ===== */
+/* Base: fons més opac, es llegeix bé a qualsevol navegador */
+.nav { background: rgba(10, 30, 26, .88); }
+.nav.solid { background: rgba(10, 30, 26, .94); }
+.btn-ghost, .hero-badges span, .date-pill { background: rgba(10, 30, 26, .45); }
+.gallery figcaption { background: rgba(0, 0, 0, .55); }
+
+/* Navegadors amb backdrop-filter (Chrome, Edge, Safari, Firefox 103+, Opera...) */
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .nav { background: rgba(10, 30, 26, .45); -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%); }
+  .nav.solid { background: rgba(10, 30, 26, .85); }
+  .btn-ghost, .hero-badges span, .date-pill { background: rgba(255, 255, 255, .14); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+  .gallery figcaption { background: rgba(0, 0, 0, .30); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+}
 
 /* ===== Desplegable inclou / no inclou ===== */
 .acc { margin-top: 1rem; border-top: 1px solid var(--line); padding-top: .8rem; }
