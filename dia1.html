@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dia 1 · Ibex Expeditions</title>
+  <meta name="description" content="Dia 1 de la travessa: de Bohinjska Bistrica a la Planinska koča na Vojah.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 27 12 9l5 8 4-6 9 16z" fill="#e8a33d"/></svg>
+      Ibex Expeditions
+    </a>
+    <button class="burger" aria-label="Obre el menú" aria-expanded="false">☰</button>
+    <ul>
+      <li><a class="link" href="index.html">Inici</a></li>
+      <li><a class="link" href="index.html#travessa">La travessa</a></li>
+      <li><a class="link active" href="index.html#dies">Els 5 dies</a></li>
+      <li><a class="link" href="index.html#pràctic">Informació</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Inici</a> › <a href="index.html#dies">Els 5 dies</a> › Dia 1</div>
+    <span class="date-pill">📅 12 de juliol de 2027</span>
+    <h1>Dia 1 · Entrada a les valls</h1>
+    <p class="lead" style="color:#d4e2da">Comencem a peu des de Bohinjska Bistrica en direcció a la Planinska koča na Vojah, on dormirem.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Ruta</span>
+      <h2>Inici i final</h2>
+    </div>
+    <div class="route reveal">
+      <div class="point"><small>Sortida</small><h3>Bohinjska Bistrica</h3></div>
+      <div class="arrow">→</div>
+      <div class="point"><small>Refugi</small><h3>Planinska koča na Vojah</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#ece8dc;padding-top:60px">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Mapa</span>
+      <h2>Recorregut</h2>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe src="https://mapy.com/s/dobadazuhu" title="Mapa del dia 1 a Mapy.com" loading="lazy" frameborder="0"></iframe>
+      <a class="map-link" href="https://mapy.com/s/dobadazuhu" target="_blank" rel="noopener">Obre el mapa a Mapy.com ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Dades de l'etapa</span>
+      <h2>En xifres</h2>
+    </div>
+    <div style="overflow-x:auto" class="reveal">
+      <table class="data-table">
+        <thead><tr><th>Concepte</th><th>Pla A+</th><th>Pla B</th><th>Pla C</th></tr></thead>
+        <tbody>
+          <tr><td>Distància</td><td class="pending">Pendent</td><td class="pending">Pendent</td><td class="pending">Pendent</td></tr>
+          <tr><td>Desnivell positiu</td><td class="pending">Pendent</td><td class="pending">Pendent</td><td class="pending">Pendent</td></tr>
+          <tr><td>Desnivell negatiu</td><td class="pending">Pendent</td><td class="pending">Pendent</td><td class="pending">Pendent</td></tr>
+          <tr><td>Temps de marxa</td><td class="pending">Pendent</td><td class="pending">Pendent</td><td class="pending">Pendent</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:.8rem;color:var(--muted);font-size:.9rem">Les dades es completaran quan el track estigui acabat.</p>
+  </div>
+</section>
+
+<section class="section" style="background:#ece8dc">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Alternatives</span>
+      <h2>Tres plans per a un mateix dia</h2>
+      <p class="lead">Els guies trien el pla segons el grup, el temps i l'estat de la ruta. Dormim sempre al mateix refugi.</p>
+    </div>
+
+    <div class="tabs reveal" role="tablist" style="margin-top:1.6rem">
+      <button class="tab" role="tab" aria-selected="true" data-target="plan-a">Pla A+ · Ampliat</button>
+      <button class="tab" role="tab" aria-selected="false" data-target="plan-b">Pla B · Més fàcil</button>
+      <button class="tab" role="tab" aria-selected="false" data-target="plan-c">Pla C · Amb bus</button>
+    </div>
+
+    <div id="plan-a" class="plan show"><div class="plan-box">
+      <h3>Pla A+ — ruta ampliada</h3>
+      <p>Opció completa del dia, per quan el grup va bé de forces i les condicions són bones.</p>
+      <p class="pending">Descripció de la ruta pendent de completar.</p>
+    </div></div>
+
+    <div id="plan-b" class="plan"><div class="plan-box b">
+      <h3>Pla B — camí més fàcil</h3>
+      <p>Variant més senzilla per arribar al mateix refugi, per quan cal reduir esforç o temps.</p>
+      <p class="pending">Descripció de la ruta pendent de completar.</p>
+    </div></div>
+
+    <div id="plan-c" class="plan"><div class="plan-box c">
+      <h3>Pla C — amb bus</h3>
+      <p>Opció de transport públic per arribar al refugi si no es pot caminar tot el recorregut.</p>
+      <p class="pending">Horaris i parades pendents de completar.</p>
+    </div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="notice reveal"><strong>Recorda:</strong> el refugi no està inclòs al preu del guiatge. Cada participant el paga directament.</div>
+    <div class="day-nav" style="margin-top:2rem">
+      <a class="btn btn-ghost" style="color:var(--forest);border-color:var(--forest)" href="index.html#dies">← Tots els dies</a>
+      <span class="tag soon" style="align-self:center">Dia 2 · aviat</span>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <a class="brand" href="index.html">Ibex Expeditions</a>
+    <p>Travesses al cor dels Alps Julians · Instagram: <a href="https://www.instagram.com/ibex.exped" target="_blank" rel="noopener">@ibex.exped</a></p>
+    <div class="footer-bottom">© 2026 Ibex Expeditions · Projecte del TD2 de Mitja Muntanya</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
