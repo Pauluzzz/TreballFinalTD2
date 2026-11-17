@@ -325,3 +325,38 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.01em; }
 }
 .notice { background: linear-gradient(135deg, rgba(255,246,224,.9), rgba(255,246,224,.6)); box-shadow: inset 0 1px 0 rgba(255,255,255,.9); }
 .day-card.photo .num { text-shadow: 0 2px 10px rgba(0,0,0,.45); }
+
+/* ===== v4: Liquid Glass més visible (refracció + brillantor) ===== */
+:root {
+  --glass-bg: linear-gradient(145deg, rgba(255,255,255,.42) 0%, rgba(255,255,255,.12) 38%, rgba(255,255,255,.06) 62%, rgba(255,255,255,.30) 100%);
+  --glass-edge: inset 0 0 0 1px rgba(255,255,255,.40), inset 0 2px 1px -1px rgba(255,255,255,.95), inset 0 -2px 1px -1px rgba(255,255,255,.55), inset 0 0 22px rgba(255,255,255,.18);
+}
+.nav::before, .nav.solid::before,
+.btn-ghost, .hero-badges span, .date-pill, .gallery figcaption, .statbar .grid {
+  backdrop-filter: blur(5px) saturate(190%) brightness(1.12) contrast(1.05);
+  -webkit-backdrop-filter: blur(5px) saturate(190%) brightness(1.12) contrast(1.05);
+}
+.is-chromium .nav::before, .is-chromium .nav.solid::before,
+.is-chromium .btn-ghost, .is-chromium .hero-badges span, .is-chromium .date-pill,
+.is-chromium .gallery figcaption, .is-chromium .statbar .grid {
+  backdrop-filter: url(#liquid) blur(3px) saturate(190%) brightness(1.12);
+}
+.nav::before { background: var(--glass-bg), rgba(255,255,255,.05); }
+.nav.solid::before { background: var(--glass-bg), rgba(10,30,26,.35); }
+.statbar .grid { background: var(--glass-bg), rgba(18,48,42,.35); }
+.hero-badges span { padding: .6rem 1.3rem; font-weight: 600; }
+.btn-ghost { padding: 1rem 1.9rem; }
+.btn-ghost:hover { transform: translateY(-2px) scale(1.03); }
+/* Brillantor que segueix el cursor */
+.nav::after, .btn-ghost::after, .hero-badges span::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.35) 48%, transparent 60%);
+  background-size: 250% 100%; background-position: 130% 0; transition: background-position .9s ease;
+}
+.nav:hover::after, .btn-ghost:hover::after, .hero-badges span:hover::after { background-position: -30% 0; }
+/* Targetes més translúcides sobre els degradats de color */
+.card, .plan-box, .map-wrap, .route .point, .day-card {
+  background: linear-gradient(145deg, rgba(255,255,255,.62), rgba(255,255,255,.28));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.55), inset 0 2px 1px -1px #fff, inset 0 -2px 1px -1px rgba(255,255,255,.6), 0 14px 38px rgba(18,48,42,.14);
+  backdrop-filter: blur(6px) saturate(170%); -webkit-backdrop-filter: blur(6px) saturate(170%);
+}
