@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ibex Expeditions · Travesses al cor dels Alps Julians</title>
   <meta name="description" content="Ibex Expeditions: travessa guiada de 5 dies a peu pel Parc Nacional del Triglav (Eslovènia).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-
-<header class="nav">
+<body><header class="nav" id="nav">
   <div class="container nav-inner">
     <a class="brand" href="index.html">
       <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 27 12 9l5 8 4-6 9 16z" fill="#e8a33d"/></svg>
@@ -21,11 +22,12 @@
       <li><a class="link" href="index.html#travessa">La travessa</a></li>
       <li><a class="link" href="index.html#dies">Els 5 dies</a></li>
       <li><a class="link" href="index.html#pràctic">Informació</a></li>
+      <li><a class="link cta" href="dia1.html">Dia 1</a></li>
     </ul>
   </div>
 </header>
 
-<section class="hero">
+<section class="hero hero-photo" style="--hero:url('https://commons.wikimedia.org/wiki/Special:FilePath/Bohinjsko_jezero_2.jpg?width=2000')">
   <div class="container">
     <span class="eyebrow" style="color:#f3d9a4">Parc Nacional del Triglav · Eslovènia</span>
     <h1>Ibex Expeditions</h1>
@@ -35,37 +37,52 @@
       <a class="btn btn-primary" href="dia1.html">Descobreix el dia 1</a>
       <a class="btn btn-ghost" href="#travessa">Sobre la travessa</a>
     </div>
+    <div class="hero-badges"><span>📅 12 de juliol de 2027</span><span>🥾 5 dies a peu</span><span>🏠 Nits en refugi</span></div>
   </div>
-  <svg class="hero-mountains" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 200V120l140-70 110 60 150-90 160 100 130-60 170 90 140-80 160 70 120-50 160 80v50z" fill="#f6f4ee" opacity=".35"/>
-    <path d="M0 200V150l180-60 120 50 160-70 140 80 190-70 150 60 160-50 170 70 170-40v80z" fill="#f6f4ee"/>
-  </svg>
+</section>
+
+<section class="statbar">
+  <div class="container"><div class="grid">
+    <div><strong>5</strong><span>dies</span></div>
+    <div><strong>2</strong><span>llacs</span></div>
+    <div><strong>12</strong><span>places</span></div>
+    <div><strong>500 €</strong><span>per persona</span></div>
+  </div></div>
 </section>
 
 <section class="section" id="travessa">
-  <div class="container">
+  <div class="container split">
     <div class="reveal">
       <span class="eyebrow">La travessa</span>
-      <h2>Una setmana de muntanya, un sol grup</h2>
-      <p class="lead">Una única sortida el juliol de 2027: sortim i tornem a peu a Bohinjska Bistrica, passant per dos llacs i dormint cada nit en un refugi de muntanya.</p>
+      <h2>Cinc dies pel cor del parc nacional</h2>
+      <p class="lead">Una única sortida el juliol de 2027: surts i tornes a peu a Bohinjska Bistrica, passes per dos llacs i dorms cada nit en un refugi de muntanya.</p>
+      <ul class="checks">
+        <li>Travessa a peu, pensada per respectar l'entorn</li>
+        <li>Grup reduït, acompanyat de guies titulats</li>
+        <li>Cada nit en un refugi de muntanya</li>
+        <li>Rutes planificades amb alternatives per a cada etapa</li>
+      </ul>
     </div>
+    <img class="reveal" src="https://commons.wikimedia.org/wiki/Special:FilePath/Mostnica-Voje5.JPG?width=1600" alt="El riu Mostnica a la vall de Voje" loading="lazy">
+  </div>
+</section>
 
-    <div class="grid grid-4" style="margin-top:2rem">
-      <div class="card stat reveal"><strong>5</strong><span>dies a peu</span></div>
-      <div class="card stat reveal"><strong>12</strong><span>places per grup</span></div>
-      <div class="card stat reveal"><strong>1</strong><span>sortida, juliol 2027</span></div>
-      <div class="card stat reveal"><strong>2</strong><span>llacs</span></div>
+<section class="section" style="background:#ece8dc;padding-top:70px">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Paisatge</span>
+      <h2>Què t'espera</h2>
     </div>
-
-    <div class="grid grid-3" style="margin-top:2rem">
-      <div class="card reveal"><div class="icon">🌿</div><h3>Muntanya amb cura</h3><p>Una travessa a peu pensada per respectar l'entorn que visitem.</p></div>
-      <div class="card reveal"><div class="icon">🧭</div><h3>Acompanyats</h3><p>Camines en grup reduït, amb guies titulats que s'encarreguen de la ruta i la seguretat.</p></div>
-      <div class="card reveal"><div class="icon">🏠</div><h3>Dormim en refugi</h3><p>Cada nit en el refugi previst, al cor dels Alps Julians.</p></div>
+    <div class="gallery reveal" style="margin-top:1.6rem">
+      <figure class="wide tall"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alpine_landscape_panorama_in_the_evening_%2852340854025%29.jpg?width=1600" alt="Paisatge alpí al vespre" loading="lazy"><figcaption>Alps Julians al vespre</figcaption></figure>
+      <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Planina-pri-Jezeru-lake.jpg?width=1600" alt="Llac de muntanya a Planina pri Jezeru" loading="lazy"><figcaption>Planina pri Jezeru</figcaption></figure>
+      <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Planinska_ko%C4%8Da_na_Vojah.JPG?width=1600" alt="Planinska koča na Vojah" loading="lazy"><figcaption>Planinska koča na Vojah</figcaption></figure>
+      <figure class="wide"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Beautiful_surroundings_of_Planina_Zajamniki,_Pokljuka_plateau_near_Lake_Bohinj,_Julian_Alps_in_Triglav_National_Park_%2852340724264%29.jpg?width=1600" alt="Altiplà de Pokljuka" loading="lazy"><figcaption>Altiplà de Pokljuka</figcaption></figure>
     </div>
   </div>
 </section>
 
-<section class="section" id="dies" style="background:#ece8dc">
+<section class="section" id="dies">
   <div class="container">
     <div class="reveal">
       <span class="eyebrow">Itinerari</span>
@@ -73,30 +90,26 @@
       <p class="lead">El dia 1 ja està disponible. Els altres dies arribaran aviat.</p>
     </div>
     <div class="days" style="margin-top:2rem">
-      <a class="day-card available reveal" href="dia1.html">
-        <span class="num">1</span><span class="tag">Disponible</span>
-        <h3>Dia 1</h3><small>Bohinjska Bistrica → Planinska koča na Vojah</small>
-      </a>
-      <div class="day-card soon reveal"><span class="num">2</span><span class="tag soon">Aviat</span><h3>Dia 2</h3><small>Fins a Goreljek (Pokljuka)</small></div>
-      <div class="day-card soon reveal"><span class="num">3</span><span class="tag soon">Aviat</span><h3>Dia 3</h3><small>Per definir</small></div>
-      <div class="day-card soon reveal"><span class="num">4</span><span class="tag soon">Aviat</span><h3>Dia 4</h3><small>Per definir</small></div>
-      <div class="day-card soon reveal"><span class="num">5</span><span class="tag soon">Aviat</span><h3>Dia 5</h3><small>Tornada a Bohinjska Bistrica</small></div>
+      <a class="day-card photo available reveal" href="dia1.html"><div class="thumb" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Mostnica-Voje5.JPG?width=600')"></div><div class="body"><span class="num">1</span><span class="tag">Disponible</span><h3>Dia 1</h3><small>Bohinjska Bistrica → Planinska koča na Vojah</small></div></a>
+      <div class="day-card photo soon reveal"><div class="thumb" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Beautiful_surroundings_of_Planina_Zajamniki,_Pokljuka_plateau_near_Lake_Bohinj,_Julian_Alps_in_Triglav_National_Park_%2852340724264%29.jpg?width=600')"></div><div class="body"><span class="num">2</span><span class="tag soon">Aviat</span><h3>Dia 2</h3><small>Fins a Goreljek (Pokljuka)</small></div></div>
+      <div class="day-card photo soon reveal"><div class="thumb" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Planina-pri-Jezeru-lake.jpg?width=600')"></div><div class="body"><span class="num">3</span><span class="tag soon">Aviat</span><h3>Dia 3</h3><small>Per definir</small></div></div>
+      <div class="day-card photo soon reveal"><div class="thumb" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Alpine_landscape_panorama_in_the_evening_%2852340854025%29.jpg?width=600')"></div><div class="body"><span class="num">4</span><span class="tag soon">Aviat</span><h3>Dia 4</h3><small>Per definir</small></div></div>
+      <div class="day-card photo soon reveal"><div class="thumb" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Sava_Bohinjka_River_%2842613772802%29.jpg?width=600')"></div><div class="body"><span class="num">5</span><span class="tag soon">Aviat</span><h3>Dia 5</h3><small>Tornada a Bohinjska Bistrica</small></div></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="pràctic">
+<section class="section" id="pràctic" style="background:#ece8dc">
   <div class="container">
     <div class="reveal">
       <span class="eyebrow">Informació pràctica</span>
       <h2>Què inclou (i què no)</h2>
     </div>
     <div class="grid grid-3" style="margin-top:1.5rem">
-      <div class="card reveal"><h3>Preu</h3><p><strong>500 € per persona</strong>, només el servei de guiatge.</p></div>
-      <div class="card reveal"><h3>No inclou</h3><p>Refugis, àpats, transport ni cap pagament a tercers: cada persona els paga directament. Si un refugi demana pagar en reservar, ho indiquem a part i pel mateix preu del refugi, sense cap import afegit.</p></div>
-      <div class="card reveal"><h3>Data</h3><p>Sortida única, <strong>12 de juliol de 2027</strong>.</p></div>
+      <div class="card reveal"><div class="icon">💶</div><h3>Preu</h3><p><strong>500 € per persona</strong>, només el servei de guiatge.</p></div>
+      <div class="card reveal"><div class="icon">🧾</div><h3>No inclou</h3><p>Refugis, àpats, transport ni cap pagament a tercers: cada persona els paga directament. Si un refugi demana pagar en reservar, ho indiquem a part i pel mateix preu del refugi, sense cap import afegit.</p></div>
+      <div class="card reveal"><div class="icon">📅</div><h3>Data</h3><p>Sortida única, <strong>12 de juliol de 2027</strong>.</p></div>
     </div>
-    
   </div>
 </section>
 
@@ -104,10 +117,10 @@
   <div class="container">
     <a class="brand" href="index.html">Ibex Expeditions</a>
     <p>Travesses al cor dels Alps Julians · Instagram: <a href="https://www.instagram.com/ibex.exped" target="_blank" rel="noopener">@ibex.exped</a></p>
+    <p class="credits">Fotografies: <a href="https://commons.wikimedia.org/wiki/File:Bohinjsko_jezero_2.jpg" target="_blank" rel="noopener">Llac de Bohinj</a>, <a href="https://commons.wikimedia.org/wiki/File:Beautiful_surroundings_of_Planina_Zajamniki,_Pokljuka_plateau_near_Lake_Bohinj,_Julian_Alps_in_Triglav_National_Park_%2852340724264%29.jpg" target="_blank" rel="noopener">Pokljuka</a>, <a href="https://commons.wikimedia.org/wiki/File:Planina-pri-Jezeru-lake.jpg" target="_blank" rel="noopener">Planina pri Jezeru</a>, <a href="https://commons.wikimedia.org/wiki/File:Mostnica-Voje5.JPG" target="_blank" rel="noopener">Mostnica</a>, <a href="https://commons.wikimedia.org/wiki/File:Planinska_ko%C4%8Da_na_Vojah.JPG" target="_blank" rel="noopener">Planinska koča na Vojah</a>, <a href="https://commons.wikimedia.org/wiki/File:Alpine_landscape_panorama_in_the_evening_%2852340854025%29.jpg" target="_blank" rel="noopener">Alps Julians</a>, <a href="https://commons.wikimedia.org/wiki/File:Sava_Bohinjka_River_%2842613772802%29.jpg" target="_blank" rel="noopener">Sava Bohinjka</a> — Wikimedia Commons. Autors i llicències a la pàgina de cada fotografia.</p>
     <div class="footer-bottom">© 2026 Ibex Expeditions</div>
   </div>
 </footer>
-
 <script src="js/main.js"></script>
 </body>
 </html>
