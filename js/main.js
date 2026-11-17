@@ -27,4 +27,27 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     items.forEach((el) => el.classList.add("visible"));
   }
+
+  // Desplegables amb animació suau
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll("details.acc").forEach((d) => {
+    const summary = d.querySelector("summary");
+    const body = d.querySelector(".acc-body");
+    d.classList.toggle("is-open", d.open);
+    summary.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (d._anim) { d._anim.cancel(); d._anim = null; body.style.overflow = ""; }
+      const opening = !d.classList.contains("is-open");
+      d.classList.toggle("is-open", opening);
+      if (opening) d.open = true;
+      if (reduce) { d.open = opening; return; }
+      const full = body.scrollHeight;
+      const frames = opening
+        ? { height: ["0px", full + "px"], opacity: [0, 1] }
+        : { height: [body.offsetHeight + "px", "0px"], opacity: [1, 0] };
+      body.style.overflow = "hidden";
+      d._anim = body.animate(frames, { duration: opening ? 380 : 300, easing: "cubic-bezier(.2,.7,.2,1)" });
+      d._anim.onfinish = () => { body.style.overflow = ""; d._anim = null; if (!opening) d.open = false; };
+    });
+  });
 });
