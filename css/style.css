@@ -351,3 +351,32 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.01em; }
 .nav ul.has-ind a.link { border-bottom-color: transparent !important; }
 section[id] { scroll-margin-top: 90px; }
 @media (max-width: 760px) { .nav-indicator { display: none; } .nav ul.has-ind a.link.active { border-bottom-color: var(--sun) !important; } }
+
+/* ===== Mòbil: menú, que no desbordi la pàgina ===== */
+html, body { overflow-x: clip; }
+.brand { white-space: nowrap; }
+@media (max-width: 760px) {
+  .nav { width: calc(100% - 20px); top: 10px; }
+  .nav-inner { padding: 0 .6rem 0 1.1rem; height: 58px; }
+  .brand { font-size: 1.1rem; }
+  .brand svg { width: 24px; height: 24px; }
+  .burger { padding: .4rem .7rem; font-size: 1.6rem; line-height: 1; }
+  .nav ul {
+    position: absolute !important; top: calc(100% + 8px); left: 0; right: 0;
+    flex-direction: column; gap: 0; padding: .4rem 0;
+    background: rgba(10,30,26,.92); border-radius: 24px;
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+    box-shadow: var(--glass-rim), var(--glass-drop);
+    max-height: 0; opacity: 0; overflow: hidden; visibility: hidden; padding-top: 0; padding-bottom: 0;
+    transition: max-height .35s ease, opacity .25s ease, visibility .25s, padding .25s;
+  }
+  .nav ul.open { max-height: 420px; opacity: 1; visibility: visible; padding: .5rem 0; }
+  .nav li { padding: 0; border: 0; }
+  .nav a.link { display: block; padding: .85rem 1.4rem; border-bottom: 0 !important; }
+  .nav a.link.active { color: var(--sun); }
+  .nav ul.has-ind a.link.active { border-bottom: 0 !important; }
+  .nav a.link.cta { display: inline-block; margin: .4rem 1.2rem .6rem; padding: .6rem 1.4rem; }
+  .hero-photo { padding: 110px 0 120px; min-height: 92vh; }
+  .hero .container { width: 90%; }
+  .statbar { margin-top: -40px; }
+}
