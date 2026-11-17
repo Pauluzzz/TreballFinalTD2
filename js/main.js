@@ -77,16 +77,14 @@ document.addEventListener("DOMContentLoaded", () => {
       .map((a) => ({ a, el: document.getElementById((a.getAttribute("href").split("#")[1] || (a.getAttribute("href") === "index.html" ? "inici" : "")))}))
       .filter((m) => m.el);
     if (map.length && location.pathname.indexOf("dia") === -1) {
-      let ticking = false;
       const update = () => {
-        ticking = false;
         const mark = window.innerHeight * 0.4;
         let cur = map[0];
         map.forEach((m) => { if (m.el.getBoundingClientRect().top <= mark) cur = m; });
         if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = map[map.length - 1];
         setActive(cur.a);
       };
-      window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+      window.addEventListener("scroll", update, { passive: true });
       window.addEventListener("resize", update);
       update();
     } else {
