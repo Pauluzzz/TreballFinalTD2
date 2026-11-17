@@ -1,5 +1,8 @@
 // Ibex Expeditions — comportament de la web
 document.addEventListener("DOMContentLoaded", () => {
+  // Refracció real només a navegadors Chromium (Chrome, Edge, Opera, Brave...)
+  if (window.chrome) document.documentElement.classList.add("is-chromium");
+
   // Barra de navegació: transparent a dalt, sòlida en baixar
   const nav = document.getElementById("nav");
   const onScroll = () => nav && nav.classList.toggle("solid", window.scrollY > 40);

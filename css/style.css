@@ -293,3 +293,54 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.01em; }
 
 /* El desplegable no estira les targetes del costat */
 .price-grid { align-items: start; }
+
+/* ===== Liquid Glass = blur + refracció a les vores =====
+   Chromium: blur + refracció (filtre SVG #liquid). Resta de navegadors: només blur. */
+:root {
+  --glass-tint: linear-gradient(145deg, rgba(255,255,255,.34) 0%, rgba(255,255,255,.08) 40%, rgba(255,255,255,.05) 62%, rgba(255,255,255,.24) 100%);
+  --glass-rim: inset 0 0 0 1px rgba(255,255,255,.38), inset 0 2px 1px -1px rgba(255,255,255,.9), inset 0 -2px 1px -1px rgba(255,255,255,.5), inset 0 0 20px rgba(255,255,255,.14);
+  --glass-drop: 0 8px 30px rgba(0,0,0,.22), 0 2px 6px rgba(0,0,0,.12);
+}
+
+/* Menú: píndola flotant. El vidre és una capa a part, així el text no es deforma */
+.nav {
+  position: fixed; top: 12px; left: 50%; right: auto; transform: translateX(-50%);
+  width: min(1100px, 94%); border-radius: 999px;
+  background: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+}
+.nav-inner { padding: 0 1.4rem; width: 100%; height: 66px; }
+.nav::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: -1;
+  background: var(--glass-tint), rgba(10,30,26,.38);
+  box-shadow: var(--glass-rim), var(--glass-drop);
+  -webkit-backdrop-filter: blur(10px) saturate(180%) brightness(1.08);
+  backdrop-filter: blur(10px) saturate(180%) brightness(1.08);
+}
+.nav.solid::before { background: var(--glass-tint), rgba(10,30,26,.62); }
+@media (max-width: 760px) { .nav ul { top: 70px; border-radius: 22px; background: rgba(10,30,26,.88); } }
+
+/* Etiquetes, botons i peus de foto */
+.btn-ghost, .hero-badges span, .date-pill, .gallery figcaption {
+  background: var(--glass-tint), rgba(10,30,26,.18); border: 0; color: #fff;
+  box-shadow: var(--glass-rim), var(--glass-drop);
+  -webkit-backdrop-filter: blur(8px) saturate(180%) brightness(1.1);
+  backdrop-filter: blur(8px) saturate(180%) brightness(1.1);
+}
+.gallery figcaption { left: 10px; right: auto; bottom: 10px; padding: .45rem .9rem; border-radius: 999px; }
+.btn-ghost[style*="var(--forest)"] { color: var(--forest) !important; background: rgba(255,255,255,.55); box-shadow: var(--glass-rim), 0 4px 14px rgba(18,48,42,.12); }
+
+/* Només Chromium: afegeix la refracció */
+.is-chromium .nav::before, .is-chromium .nav.solid::before,
+.is-chromium .btn-ghost, .is-chromium .hero-badges span, .is-chromium .date-pill, .is-chromium .gallery figcaption {
+  -webkit-backdrop-filter: url(#liquid) blur(6px) saturate(180%) brightness(1.1);
+  backdrop-filter: url(#liquid) blur(6px) saturate(180%) brightness(1.1);
+}
+
+/* Brillantor en passar-hi per sobre */
+.nav::after, .btn-ghost::after, .hero-badges span::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.32) 48%, transparent 60%);
+  background-size: 250% 100%; background-position: 130% 0; transition: background-position .9s ease;
+}
+.btn-ghost, .hero-badges span { position: relative; }
+.nav:hover::after, .btn-ghost:hover::after, .hero-badges span:hover::after { background-position: -30% 0; }
