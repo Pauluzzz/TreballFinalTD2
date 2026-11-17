@@ -9,7 +9,7 @@ Web de la travessa de 5 dies pel Parc Nacional del Triglav (Eslovènia).
 index.html      Pàgina principal
 dia1.html       Dia 1: Bohinjska Bistrica → Planinska koča na Vojah
 css/style.css   Estils
-js/main.js      Menú, animacions i pestanyes dels plans A+/B/C
+js/main.js     Menú i animacions
 ```
 
 ## Publicar-la a GitHub Pages

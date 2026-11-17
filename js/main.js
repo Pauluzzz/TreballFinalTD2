@@ -22,14 +22,4 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     items.forEach((el) => el.classList.add("visible"));
   }
-
-  // Pestanyes dels plans A+ / B / C
-  const tabs = document.querySelectorAll(".tab");
-  const plans = document.querySelectorAll(".plan");
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabs.forEach((t) => t.setAttribute("aria-selected", t === tab));
-      plans.forEach((p) => p.classList.toggle("show", p.id === tab.dataset.target));
-    });
-  });
 });
