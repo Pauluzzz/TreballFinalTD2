@@ -419,3 +419,13 @@ html, body { overflow-x: clip; }
   .soon-box div { padding: 0 1.3rem 1.3rem; }
   .day-tabs-wrap { top: 76px; }
 }
+
+/* Targetes dels dies: totes clicables, també les que diuen "Aviat" */
+.day-card.soon, .day-card.photo.soon { opacity: 1; cursor: pointer; }
+.day-card.photo.soon .thumb { filter: none; }
+.day-card.photo { transition: transform .25s ease, box-shadow .25s ease; }
+.day-card.photo:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(18,48,42,.2); }
+.day-card.photo .thumb { transition: transform .5s ease; }
+.day-card.photo { overflow: hidden; }
+.day-card.photo:hover .thumb { transform: scale(1.06); }
+.day-card.photo:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
