@@ -344,3 +344,10 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.01em; }
 }
 .btn-ghost, .hero-badges span { position: relative; }
 .nav:hover::after, .btn-ghost:hover::after, .hero-badges span:hover::after { background-position: -30% 0; }
+
+/* ===== Subratllat del menú que es mou ===== */
+.nav ul { position: relative; }
+.nav-indicator { position: absolute; left: 0; bottom: -4px; height: 3px; width: 0; border-radius: 3px; background: var(--sun); box-shadow: 0 0 10px rgba(232,163,61,.7); opacity: 0; pointer-events: none; transition: transform .45s cubic-bezier(.2,.8,.2,1), width .45s cubic-bezier(.2,.8,.2,1), opacity .3s; }
+.nav ul.has-ind a.link { border-bottom-color: transparent !important; }
+section[id] { scroll-margin-top: 90px; }
+@media (max-width: 760px) { .nav-indicator { display: none; } .nav ul.has-ind a.link.active { border-bottom-color: var(--sun) !important; } }

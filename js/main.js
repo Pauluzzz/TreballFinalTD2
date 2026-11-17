@@ -53,4 +53,46 @@ document.addEventListener("DOMContentLoaded", () => {
       d._anim.onfinish = () => { body.style.overflow = ""; d._anim = null; if (!opening) d.open = false; };
     });
   });
+
+  // Menú: el subratllat segueix la secció que estàs mirant
+  const ul = document.querySelector(".nav ul");
+  if (ul) {
+    const links = [...ul.querySelectorAll("a.link:not(.cta)")];
+    const ind = document.createElement("span");
+    ind.className = "nav-indicator";
+    ul.appendChild(ind);
+    ul.classList.add("has-ind");
+    const place = (a) => {
+      if (!a) { ind.style.opacity = 0; return; }
+      const r = a.getBoundingClientRect(), p = ul.getBoundingClientRect();
+      ind.style.opacity = 1;
+      ind.style.width = r.width + "px";
+      ind.style.transform = "translateX(" + (r.left - p.left) + "px)";
+    };
+    const setActive = (a) => {
+      links.forEach((l) => l.classList.toggle("active", l === a));
+      place(a);
+    };
+    const map = links
+      .map((a) => ({ a, el: document.getElementById((a.getAttribute("href").split("#")[1] || (a.getAttribute("href") === "index.html" ? "inici" : "")))}))
+      .filter((m) => m.el);
+    if (map.length && location.pathname.indexOf("dia") === -1) {
+      let ticking = false;
+      const update = () => {
+        ticking = false;
+        const mark = window.innerHeight * 0.4;
+        let cur = map[0];
+        map.forEach((m) => { if (m.el.getBoundingClientRect().top <= mark) cur = m; });
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = map[map.length - 1];
+        setActive(cur.a);
+      };
+      window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+      window.addEventListener("resize", update);
+      update();
+    } else {
+      place(links.find((l) => l.classList.contains("active")));
+      window.addEventListener("resize", () => place(links.find((l) => l.classList.contains("active"))));
+    }
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => place(links.find((l) => l.classList.contains("active"))));
+  }
 });
