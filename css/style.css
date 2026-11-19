@@ -429,3 +429,16 @@ html, body { overflow-x: clip; }
 .day-card.photo { overflow: hidden; }
 .day-card.photo:hover .thumb { transform: scale(1.06); }
 .day-card.photo:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+
+/* ---------- Dades de cada dia ---------- */
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: .8rem; margin: 0 0 1.6rem; }
+.stats-row div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: .9rem 1rem; box-shadow: var(--shadow); }
+.stats-row strong { display: block; font-family: var(--serif); font-size: 1.35rem; color: var(--forest-dark); line-height: 1.2; }
+.stats-row span { font-size: .82rem; color: var(--muted); }
+
+/* ---------- Pàgina d'informació ---------- */
+.card .icon:not(:empty) { line-height: 1.1; }
+#condicions .grid-4 .icon { display: inline-grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--forest); color: #fff; font-size: 1.1rem; font-weight: 700; }
+details.acc.card { margin-top: 0; border-top: 1px solid var(--line); padding: 1.1rem 1.4rem; }
+details.acc.card .acc-body p { margin-bottom: 0; }
+.legal-links { font-size: .85rem; }
