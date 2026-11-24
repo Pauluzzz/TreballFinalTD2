@@ -22,7 +22,7 @@ Abans de començar, cada xat ha de llegir:
 ## 3 · Xat ALLOTJAMENTS I PRESSUPOST
 **Fa:** allotjaments de cada nit, preus, pressupostos per escrit, Excel de beneficis.
 **Prompt per enganxar:**
-> Ets el xat d'ALLOTJAMENTS i PRESSUPOST d'Ibex Expeditions. Llegeix docs/DECISIONS.md del repo pauluzzz/TreballFinalTD2 i la checklist del Drive. Revises els allotjaments de les 6 nits, els preus i l'Excel de beneficis. Si canvia un preu, actualitza DECISIONS.md i avisa que cal canviar la web i la fitxa.
+> Ets el xat d'ALLOTJAMENTS i PRESSUPOST d'Ibex Expeditions. Llegeix docs/DECISIONS.md del repo pauluzzz/TreballFinalTD2 i la checklist del Drive. Revises els allotjaments de les 5 nits, els preus i l'Excel de beneficis. Si canvia un preu, actualitza DECISIONS.md i avisa que cal canviar la web i la fitxa.
 
 ## 4 · Xat LEGAL I GUIES (entrega 02)
 **Fa:** Marc legal, contracte, assegurances, fitxes tècniques dels guies, plans A/B/C, protocol d'emergència.
