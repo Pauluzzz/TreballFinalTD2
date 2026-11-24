@@ -7,7 +7,7 @@ Web de la travessa de 5 dies pel Parc Nacional del Triglav (Eslovènia).
 
 ```
 index.html      Pàgina principal (travessa, galeria, dies, informació, qui som)
-dies.html       Tots els dies de la travessa amb mapes (dia 1 i 2 fets)
+dies.html       Tots els dies de la travessa amb mapes (els 5 dies)
 informacio.html Informació pràctica: nivell, com arribar, pressupost, material, reserva, FAQ i avís legal
 dia1.html       Redirecció antiga cap a dies.html#dia-1
 css/style.css   Estils
