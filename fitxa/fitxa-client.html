@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<title>Fitxa del viatge · Ibex Expeditions</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root { --forest:#12302a; --moss:#2f5d50; --sun:#e8a33d; --sand:#f4efe4; --ink:#1c2a27; --muted:#5d6b67; --line:#e2dccd; --sky:#1f6fb2; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, sans-serif; color: var(--ink); font-size: 9.6pt; line-height: 1.42; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; position: relative; overflow: hidden; background: var(--sand); page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+  h1,h2,h3 { font-family: Fraunces, serif; color: var(--forest); line-height: 1.1; }
+  .pad { padding: 0 14mm; }
+
+  /* HERO */
+  .hero { height: 86mm; position: relative; color: #fff; display:grid; grid-template-columns: 1fr 86mm; background: var(--forest); }
+  .hero .img { background: url('logo.png') center / cover; }
+  .hero .txt { position: relative; padding: 9mm 8mm 9mm 14mm; display:flex; flex-direction: column; justify-content: flex-end; background: radial-gradient(120% 90% at 0% 0%, #2f5d50 0%, #12302a 70%); }
+  .tag { display:inline-block; align-self:flex-start; background: var(--sun); color:#2a1c05; font-weight:800; font-size:7.2pt; letter-spacing:.14em; text-transform:uppercase; padding: 1.4mm 3mm; border-radius: 20mm; }
+  .hero h1 { color:#fff; font-size: 29pt; margin: 3.5mm 0 2.5mm; letter-spacing: -.01em; }
+  .hero h1 em { font-style: normal; color: var(--sun); }
+  .hero p.sub { font-size: 10pt; color:#dfeee8; }
+  .brandline { position:absolute; top: 9mm; left: 14mm; font-weight:800; font-size: 8pt; letter-spacing:.18em; text-transform: uppercase; color:#cfe1da; }
+  .brandline span { color: var(--sun); }
+
+  /* KEY FACTS */
+  .facts { display:grid; grid-template-columns: repeat(4,1fr); gap: 3mm; padding-top: 5mm; }
+  .fact { background:#fff; border-radius: 4mm; padding: 3.2mm 3.6mm; border: 1px solid var(--line); }
+  .fact b { display:block; font-family: Fraunces, serif; font-size: 14pt; color: var(--forest); }
+  .fact span { font-size: 7.8pt; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+
+  .sec-t { display:flex; align-items: baseline; gap: 3mm; margin: 5mm 0 2.6mm; }
+  .sec-t h2 { font-size: 15pt; }
+  .sec-t small { color: var(--muted); font-size: 8.4pt; }
+
+  /* TIMELINE */
+  .tl { display:grid; gap: 1.8mm; }
+  .day { display:grid; grid-template-columns: 13mm 1fr 52mm; align-items:center; background:#fff; border:1px solid var(--line); border-radius: 4mm; padding: 2.2mm 3.6mm 2.2mm 2.6mm; }
+  .num { width: 10mm; height: 10mm; border-radius: 50%; background: var(--forest); color: #fff; display:grid; place-items:center; font-family: Fraunces, serif; font-size: 13pt; font-weight:600; }
+  .day h3 { font-size: 10.8pt; }
+  .day .d { font-size: 7.6pt; color: var(--moss); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+  .day .stats { font-size: 8.2pt; color: var(--muted); margin-top: .6mm; }
+  .day .stats b { color: var(--ink); }
+  .night { border-left: 2px dashed var(--line); padding-left: 3.4mm; font-size: 8.2pt; }
+  .night small { display:block; font-size: 7pt; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-weight:700; }
+  .night b { color: var(--forest); }
+  .day.extra { background: transparent; border-style: dashed; padding-top: 1.8mm; padding-bottom: 1.8mm; }
+  .day.extra .num { background: var(--sun); color: #2a1c05; font-size: 8pt; }
+
+  /* PRICE BAND */
+  .price { margin: 3.5mm 14mm 0; background: var(--forest); color:#fff; border-radius: 5mm; padding: 4.2mm 6mm; display:grid; grid-template-columns: auto 1fr; gap: 7mm; align-items:center; }
+  .price .big { font-family: Fraunces, serif; font-size: 30pt; color: var(--sun); line-height: 1; }
+  .price .big small { display:block; font-family: Inter, sans-serif; font-size: 7.6pt; color: #cfe1da; letter-spacing:.12em; text-transform: uppercase; font-weight: 700; margin-top: 1.5mm; }
+  .price .split { display:flex; gap: 5mm; font-size: 8.6pt; color:#dfeee8; }
+  .price .split div b { display:block; color:#fff; font-size: 12pt; font-family: Fraunces, serif; }
+  .price p { font-size: 8pt; color:#bcd3cb; margin-top: 2mm; }
+
+  /* PAGE 2 */
+  .top2 { background: var(--forest); color: #fff; padding: 9mm 14mm 7mm; display:flex; justify-content: space-between; align-items: flex-end; }
+  .top2 h2 { color:#fff; font-size: 20pt; }
+  .top2 .r { text-align:right; font-size: 8pt; color:#cfe1da; letter-spacing: .1em; text-transform: uppercase; font-weight:700; }
+  .cols { display:grid; grid-template-columns: 1fr 1fr; gap: 4.5mm; }
+  .card { background:#fff; border:1px solid var(--line); border-radius: 4mm; padding: 4mm 4.4mm; }
+  .card h3 { font-size: 11.5pt; margin-bottom: 2mm; display:flex; gap: 2mm; align-items:center; }
+  ul.ck { list-style: none; display:grid; gap: 1.2mm; }
+  ul.ck li { padding-left: 4.6mm; position: relative; }
+  ul.ck li::before { content:"✓"; position:absolute; left:0; color: var(--moss); font-weight: 800; }
+  ul.no li::before { content:"✗"; color: #b5523b; }
+  table { width:100%; border-collapse: collapse; font-size: 8.4pt; }
+  td { padding: 1.3mm 0; border-bottom: 1px solid #efeadf; }
+  td:last-child { text-align:right; font-weight: 600; white-space: nowrap; }
+  tr.tot td { border-bottom: 0; padding-top: 2mm; font-weight: 800; color: var(--forest); font-size: 9.6pt; }
+  .steps { display:grid; grid-template-columns: repeat(4,1fr); gap: 3mm; }
+  .step { background:#fff; border:1px solid var(--line); border-radius: 4mm; padding: 3.4mm; position: relative; }
+  .step .n { width: 7mm; height: 7mm; border-radius: 50%; background: var(--sun); color:#2a1c05; display:grid; place-items:center; font-weight:800; font-size: 9pt; margin-bottom: 1.8mm; }
+  .step b { display:block; color: var(--forest); font-size: 9.4pt; margin-bottom: .6mm; }
+  .step p { font-size: 8pt; color: var(--muted); }
+  .hl { background: #fff6e6; border: 1px solid #f0d6a6; border-radius: 4mm; padding: 3mm 4mm; font-size: 8.8pt; margin-top: 3mm; }
+  .contact { position:absolute; left: 0; right: 0; bottom: 0; background: var(--forest); color: #fff; padding: 6mm 14mm; display:grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 5mm; align-items:center; }
+  .contact small { display:block; font-size: 7pt; letter-spacing: .14em; text-transform: uppercase; color: var(--sun); font-weight: 800; margin-bottom: .8mm; }
+  .contact b { font-size: 10.5pt; }
+  .contact a { color:#fff; text-decoration: none; }
+  .legal { position:absolute; left: 14mm; right: 14mm; bottom: 23mm; font-size: 6.8pt; color: var(--muted); }
+  .small { font-size: 8.2pt; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- ============ PÀGINA 1 ============ -->
+<section class="page">
+  <div class="hero">
+    <div class="txt">
+      <div class="brandline">Ibex <span>·</span> Expeditions</div>
+      <span class="tag">Parc Nacional del Triglav · Eslovènia</span>
+      <h1>Travessa dels <em>Alps Julians</em></h1>
+      <p class="sub">5 dies a peu de llac a llac, per valls, altiplans i refugis. Grup reduït amb guies titulats. Tu només camines: nosaltres ho organitzem tot.</p>
+    </div>
+    <div class="img"></div>
+  </div>
+
+  <div class="pad">
+    <div class="facts">
+      <div class="fact"><span>Dates</span><b>11 – 17 juliol</b><span>2027 · sortida única</span></div>
+      <div class="fact"><span>Travessa</span><b>5 dies</b><span>77 km · a peu</span></div>
+      <div class="fact"><span>Grup</span><b>12 + 3 guies</b><span>1 guia / 4 persones</span></div>
+      <div class="fact"><span>Nivell</span><b>Moderat</b><span>6–7 h al dia · sense passos tècnics</span></div>
+    </div>
+
+    <div class="sec-t"><h2>Itinerari</h2><small>Sortida i arribada a Bohinjska Bistrica · temps orientatius</small></div>
+    <div class="tl">
+      <div class="day extra"><div class="num">dg</div><div><span class="d">Diumenge 11/07 · Arribada</span><h3>Arribada a Bohinjska Bistrica</h3></div><div class="night"><small>Nit inclosa</small><b>Bohinj ECO Hotel</b></div></div>
+      <div class="day"><div class="num">1</div><div><span class="d">Dilluns 12/07 · 8:30 trobada a l'estació de bus</span><h3>Bohinjska Bistrica → Vall de Voje</h3><div class="stats"><b>14 km</b> · +615 m · ~6 h 30</div></div><div class="night"><small>Nit · sopar i esmorzar</small><b>Planinska koča na Vojah</b> (refugi)</div></div>
+      <div class="day"><div class="num">2</div><div><span class="d">Dimarts 13/07</span><h3>Cascada del Mostnica → Altiplà de Pokljuka</h3><div class="stats"><b>15,4 km</b> · +749 m · ~7 h</div></div><div class="night"><small>Nit · sopar i esmorzar</small><b>Hotel Pokljuka</b>, Goreljek</div></div>
+      <div class="day"><div class="num">3</div><div><span class="d">Dimecres 14/07</span><h3>Pokljuka → Llac de Bled</h3><div class="stats"><b>15,9 km</b> · +135 m / −916 m · ~5 h 50</div></div><div class="night"><small>Nit · sopar i esmorzar</small><b>Hostel Bledec</b>, Bled</div></div>
+      <div class="day"><div class="num">4</div><div><span class="d">Dijous 15/07</span><h3>Bled → Nomenj, vall de la Sava Bohinjka</h3><div class="stats"><b>19,1 km</b> · +199 m · ~6 h 10</div></div><div class="night"><small>Nit · sopar i esmorzar</small><b>Farmhouse Chalet</b>, Nomenj</div></div>
+      <div class="day"><div class="num">5</div><div><span class="d">Divendres 16/07</span><h3>Nomenj → Bohinjska Bistrica</h3><div class="stats"><b>12,9 km</b> · +542 m / −530 m · ~5 h 20</div></div><div class="night"><small>Nit inclosa</small><b>Bohinj ECO Hotel</b></div></div>
+      <div class="day extra"><div class="num">ds</div><div><span class="d">Dissabte 17/07 · Tornada</span><h3>Matí lliure al llac de Bohinj · bus a l'aeroport</h3></div><div class="night"><small>Final</small><b>Fins a la propera!</b></div></div>
+    </div>
+  </div>
+
+  <div class="price">
+    <div class="big">1.290 €<small>per persona · tot inclòs</small></div>
+    <div>
+      <div class="split">
+        <div><b>850 €</b>guiatge dels 5 dies</div>
+        <div><b>+ 440 €</b>6 nits d'allotjament</div>
+        <div><b>4 sopars</b>i 6 esmorzars</div>
+      </div>
+      <p>Pagament únic per transferència, només després d'avaluar el teu nivell.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PÀGINA 2 ============ -->
+<section class="page">
+  <div class="top2"><h2>Tot el que necessites saber</h2><div class="r">Ibex Expeditions<br>Travesses al cor dels Alps Julians</div></div>
+  <div class="pad" style="padding-top:6mm">
+    <div class="cols">
+      <div class="card">
+        <h3>💶 El preu inclou</h3>
+        <table>
+          <tr><td>Guiatge 5 dies (3 guies TD2 Muntanya Mitjana)</td><td>850 €</td></tr>
+          <tr><td>Nit 0 · Bohinj ECO Hotel · esmorzar</td><td>85 €</td></tr>
+          <tr><td>Nit 1 · Koča na Vojah · mitja pensió</td><td>65 €</td></tr>
+          <tr><td>Nit 2 · Hotel Pokljuka · mitja pensió</td><td>85 €</td></tr>
+          <tr><td>Nit 3 · Hostel Bledec · mitja pensió</td><td>55 €</td></tr>
+          <tr><td>Nit 4 · Farmhouse Chalet · mitja pensió</td><td>65 €</td></tr>
+          <tr><td>Nit 5 · Bohinj ECO Hotel · esmorzar</td><td>85 €</td></tr>
+          <tr class="tot"><td>Total per persona</td><td>1.290 €</td></tr>
+        </table>
+        <p class="small" style="margin-top:1.5mm">Inclou la taxa turística. Allotjament en habitacions compartides.</p>
+      </div>
+      <div style="display:grid;gap:4.5mm">
+        <div class="card">
+          <h3>➕ No inclou</h3>
+          <ul class="ck no">
+            <li>Vols a Ljubljana (100–250 €)</li>
+            <li>Bus Ljubljana – Bohinj, anada i tornada (20–40 €)</li>
+            <li>Dinars de pícnic, begudes i extres (60–100 €)</li>
+            <li>Assegurança d'accidents i rescat (<b>obligatòria</b>)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>🚌 Com arribar</h3>
+          <ul class="ck">
+            <li>Avió a <b>Ljubljana (LJU)</b> el diumenge 11/07</li>
+            <li>Bus fins a <b>Bohinjska Bistrica</b> (~1 h 50)</li>
+            <li>Tornada: dissabte 17/07 a la tarda</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cols" style="margin-top:4.5mm">
+      <div class="card">
+        <h3>🎒 A la motxilla (7–9 kg)</h3>
+        <ul class="ck">
+          <li>Motxilla 30–40 L, botes estrenades i bastons</li>
+          <li>Impermeable, folre polar i roba tècnica</li>
+          <li><b>Sac llençol</b> (obligatori als refugis)</li>
+          <li>2 L d'aigua, frontal, crema i ulleres de sol</li>
+          <li>DNI, Targeta Sanitària Europea i efectiu</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🥾 Per a qui és</h3>
+        <ul class="ck">
+          <li>Majors de 18 anys que ja fan excursions</li>
+          <li>Caminar 6–7 h al dia, fins a +750 m</li>
+          <li>Camins senyalitzats, sense grimpades</li>
+          <li>Variants preparades per mal temps</li>
+          <li>Sortida garantida a partir de 9 persones</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec-t" style="margin-top:6mm"><h2>Com reservar</h2><small>Places limitades: 12 persones</small></div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><b>Formulari</b><p>Omple el formulari d'inscripció del web.</p></div>
+      <div class="step"><div class="n">2</div><b>Avaluem el nivell</b><p>Els guies el revisen i, si cal, et truquem.</p></div>
+      <div class="step"><div class="n">3</div><b>Info de pagament</b><p>T'enviem per correu el contracte i les dades.</p></div>
+      <div class="step"><div class="n">4</div><b>Plaça confirmada</b><p>Pagues els 1.290 € per transferència.</p></div>
+    </div>
+    <div class="hl"><b>Cancel·lació:</b> més de 60 dies abans, et retornem tot menys 50 €; entre 60 i 30 dies, el 50 %; menys de 30 dies, pots cedir la plaça. Si no s'arriba a 9 persones el 27/05/2027, et retornem tot.</div>
+  </div>
+
+  <p class="legal">Viatge combinat organitzat i venut per Viatges Muntanya Oberta, SL (GC-0000) amb el guiatge d'Ibex Expeditions. Preus d'allotjament orientatius per al juliol de 2027. Condicions completes al web. <i>Agència i registre ficticis: projecte acadèmic.</i></p>
+  <div class="contact">
+    <div><small>Inscripcions i dubtes</small><b><a href="mailto:ibex.exped@gmail.com">ibex.exped@gmail.com</a></b></div>
+    <div><small>Instagram</small><b><a href="https://www.instagram.com/ibex.exped">@ibex.exped</a></b></div>
+    <div><small>Web</small><b><a href="https://pauluzzz.github.io/TreballFinalTD2/">pauluzzz.github.io/TreballFinalTD2</a></b></div>
+  </div>
+</section>
+</body>
+</html>

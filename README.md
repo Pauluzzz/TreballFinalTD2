@@ -20,3 +20,11 @@ js/main.js      Menú, animacions, subratllat del menú, selector de dies i desp
 2. Ves a **Settings → Pages**.
 3. A *Source* tria **Deploy from a branch**, branca `main`, carpeta `/ (root)`.
 4. Al cap d'un minut la web serà a `https://EL-TEU-USUARI.github.io/NOM-DEL-REPO/`.
+
+## Documents
+
+```
+fitxa/                Fitxa del client (HTML + PDF) amb el logo
+docs/DECISIONS.md     Decisions fixades: preu, dates, allotjaments, reserva
+docs/ORGANITZACIO_XATS.md  Repartiment de feina entre xats (web, màrqueting, allotjaments, legal)
+```
