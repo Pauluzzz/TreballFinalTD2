@@ -7,7 +7,7 @@ Web de la travessa de 5 dies pel Parc Nacional del Triglav (Eslovènia).
 
 ```
 index.html      Pàgina principal (travessa, galeria, dies, informació, qui som)
-dies.html       Tots els dies de la travessa amb mapes (dia 1 i 2 fets)
+dies.html       Tots els dies de la travessa amb mapes (els 5 dies)
 informacio.html Informació pràctica: nivell, com arribar, pressupost, material, reserva, FAQ i avís legal
 dia1.html       Redirecció antiga cap a dies.html#dia-1
 css/style.css   Estils
@@ -20,3 +20,11 @@ js/main.js      Menú, animacions, subratllat del menú, selector de dies i desp
 2. Ves a **Settings → Pages**.
 3. A *Source* tria **Deploy from a branch**, branca `main`, carpeta `/ (root)`.
 4. Al cap d'un minut la web serà a `https://EL-TEU-USUARI.github.io/NOM-DEL-REPO/`.
+
+## Documents
+
+```
+fitxa/                Fitxa del client (HTML + PDF) amb el logo
+docs/DECISIONS.md     Decisions fixades: preu, dates, allotjaments, reserva
+docs/ORGANITZACIO_XATS.md  Repartiment de feina entre xats (web, màrqueting, allotjaments, legal)
+```
